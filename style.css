@@ -151,6 +151,15 @@ p {
 	line-height: 1.2;
 	color: hsl(219, 12%, 42%);
 }
+.red-notice {
+	display: inline-block;
+	width: 0.35rem;
+	height: 0.35rem;
+	background-color: hsl(1, 90%, 64%);
+	border-radius: 50%;
+	margin: 0 0 0.2rem 0.25rem;
+}
+
 
 @media screen and (min-width: 771px) {
 	main {

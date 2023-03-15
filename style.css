@@ -38,7 +38,7 @@ table {
 }
 
 
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 700px) {
 	main {margin: 2rem 1.5rem}
 }
 
@@ -95,6 +95,11 @@ img {width: 2rem;}
 	padding: 0.8rem;
 	border-radius: 0.5rem;
 }
+/* #section.unseen {
+	background-color: hsla(211, 68%, 94%, 0.4);
+	border-radius: 0.5rem;
+} */
+
 .section-5 {
 	justify-content: space-between;
 	padding-right: 2.5rem;
@@ -161,7 +166,7 @@ p {
 }
 
 
-@media screen and (min-width: 771px) {
+@media screen and (min-width: 701px) {
 	main {
 		max-width: 700px;
 		padding: 2rem 1.5rem;

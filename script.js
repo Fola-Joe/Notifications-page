@@ -16,6 +16,7 @@ markAll.addEventListener('click', function(){
     const newUnreadMsg = document.querySelectorAll('.unread');
     notification.innerText = newUnreadMsg.length;
 })
+
 // markAll.addEventListener('click', function(){
 //     section.forEach(function (e) {
 //         e.classList.remove('unread');
@@ -26,13 +27,10 @@ markAll.addEventListener('click', function(){
 //     notification.innerText = '0';
 // })
 
-unreadMsg.forEach(Msg => {
+unreadMsg.forEach((Msg) => {
     Msg.addEventListener('click', () => {
         Msg.classList.remove('unread');
-        notice.forEach(function (e) {
-            e.classList.remove('red-notice');
-        })
     })
-    const newUnreadMsg = document.querySelectorAll('.unread');
-    newUnreadMsg.length = notification.innerText ;
+    // const newUnreadMsg = document.querySelectorAll('.unread');
+    // newUnreadMsg.length = notification.innerText ;
 })

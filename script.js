@@ -1,7 +1,7 @@
 const section = document.querySelectorAll('#section');
 const notification = document.querySelector('#notification');
 const notice = document.querySelectorAll('.red-notice');
-const markAll = document.querySelector('h3');
+const markAll = document.querySelector('h2');
 
 const unreadMsg = document.querySelectorAll('.unread');
 // notification.innerText = section.length;

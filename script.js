@@ -8,13 +8,12 @@ markAll.addEventListener('click', function(){
     unreadMsg.forEach((Msg) => {
         Msg.classList.remove('unread');
     })
-    notice.forEach((e) => {
-        e.classList.remove('red-notice');
+    notice.forEach((event) => {
+        event.classList.remove('red-notice');
     })
     const newUnreadMsg = document.querySelectorAll('.unread');
     notificationNum.innerText = newUnreadMsg.length;
 })
-
 
 
 let notificationNumber = 7; // Initial notification count
@@ -22,10 +21,12 @@ let notificationNumber = 7; // Initial notification count
 //removal of notification dot and reduction of notification number 
 //as each notification is clicked
 function removeNotification(event) {
-   const notification = event.currentTarget;
+    const notification = event.currentTarget;
 
-   //this is used to select the dot element within the clicked notification
-   const dot = notification.querySelector('.red-notice');
+    //this is used to select the dot element within 
+    //the clicked notification
+    const dot = notification.querySelector('.red-notice');
+    //const currentNotification = notification.querySelector('.unread');
  
     if (!dot.classList.contains('read')) {
         notificationNumber--;
@@ -34,10 +35,11 @@ function removeNotification(event) {
         dot.classList.add('read');
         dot.style.width = '0';
         notification.classList.add('read');
-        notification.style.backgroundColor = '';
     }
-    
 }
 
 unreadMsg.forEach((Msg) => {
-    Msg.addEventListener('click', removeNotification)})
+    Msg.addEventListener('click', (event)=> {
+        removeNotification(event);
+        Msg.style.backgroundColor = 'transparent';
+    })})

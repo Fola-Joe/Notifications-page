@@ -1,36 +1,43 @@
-const section = document.querySelectorAll('#section');
-const notification = document.querySelector('#notification');
+const notificationNum = document.querySelector('#notification');
 const notice = document.querySelectorAll('.red-notice');
 const markAll = document.querySelector('h2');
-
 const unreadMsg = document.querySelectorAll('.unread');
-// notification.innerText = section.length;
+
 
 markAll.addEventListener('click', function(){
-    unreadMsg.forEach(function (Msg) {
+    unreadMsg.forEach((Msg) => {
         Msg.classList.remove('unread');
     })
-    notice.forEach(function (e) {
+    notice.forEach((e) => {
         e.classList.remove('red-notice');
     })
     const newUnreadMsg = document.querySelectorAll('.unread');
-    notification.innerText = newUnreadMsg.length;
+    notificationNum.innerText = newUnreadMsg.length;
 })
 
-// markAll.addEventListener('click', function(){
-//     section.forEach(function (e) {
-//         e.classList.remove('unread');
-//     })
-//     notice.forEach(function (e) {
-//         e.classList.remove('red-notice');
-//     })
-//     notification.innerText = '0';
-// })
+
+
+let notificationNumber = 7; // Initial notification count
+
+//removal of notification dot and reduction of notification number 
+//as each notification is clicked
+function removeNotification(event) {
+   const notification = event.currentTarget;
+
+   //this is used to select the dot element within the clicked notification
+   const dot = notification.querySelector('.red-notice');
+ 
+    if (!dot.classList.contains('read')) {
+        notificationNumber--;
+        notificationNum.textContent = notificationNumber;
+
+        dot.classList.add('read');
+        dot.style.width = '0';
+        notification.classList.add('read');
+        notification.style.backgroundColor = '';
+    }
+    
+}
 
 unreadMsg.forEach((Msg) => {
-    Msg.addEventListener('click', () => {
-        Msg.classList.remove('unread');
-    })
-    // const newUnreadMsg = document.querySelectorAll('.unread');
-    // newUnreadMsg.length = notification.innerText ;
-})
+    Msg.addEventListener('click', removeNotification)})

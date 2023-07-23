@@ -94,10 +94,11 @@ img {width: 2rem;}
 	padding: 0.8rem;
 }
 .unread {
+	cursor: pointer;
 	background-color: hsla(211, 68%, 94%, 0.4);
 	border-radius: 0.5rem;
 }
-
+.read {background-color: none;}
 .section-5 {
 	justify-content: space-between;
 	padding-right: 2.5rem;
